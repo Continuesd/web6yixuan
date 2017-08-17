@@ -16,8 +16,6 @@ export class HttpHelper {
     }
 
     public  post(url: string, params: object = {}, callback: any = null, errorCallback: any = null, forbid: boolean = true) {
-        console.log(params);
-       //$.cookie('JSESSIONID', '315A9ECE1C39D546D76F4DCF96669660');
         if (this.pauseRequestFlag == url) {
             return;
         }
@@ -36,15 +34,7 @@ export class HttpHelper {
                     }
                     ;
                 }
-            } /*else if (parseInt(this.resBaseCore.status) == 11004) {
-             //TODO页面失效,跳转到登入页面中,请先登入再进行操作
-
-             if (forbid) {
-             console.log("跳转到登入页面中");
-             layer.msg(this.resBaseCore.message);
-             }
-
-             } */ else {
+            } else {
                 let r = true;
                 if (errorCallback) {
                     r = errorCallback(this.resBaseCore.message);
@@ -102,7 +92,6 @@ export class HttpHelper {
        //headers.append('JSESSIONID', '315A9ECE1C39D546D76F4DCF96669660');
         var requestoptions = new RequestOptions({
             headers: headers,
-            //withCredentials: true // optional when using windows auth
         })
         return requestoptions;
     }
