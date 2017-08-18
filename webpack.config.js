@@ -6,7 +6,6 @@ module.exports = {
     entry: './client/main.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/assets/',
         filename: '[name].bundle.js'
     },
     module: {
