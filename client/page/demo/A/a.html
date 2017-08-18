@@ -69,7 +69,9 @@
 <hr>
 
 
-<h1>从A标签,传递数据给B标签</h1>
+<h1>从A页面,传递数据给B页面</h1>
+   <demo-b [Aarg]="showEnterStr"  (BtoAEvent)="BtoA($event)"></demo-b>
+    <h1>这是B传递过来的数据  {{ btoAstr }}</h1>
 
 </body>
 </html>

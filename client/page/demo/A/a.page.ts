@@ -18,14 +18,23 @@ export class APage implements OnInit {
     }
 
     //4.当chunkFlag为true的时候,背景颜色为黄色,为flase的时候为红色. [ngClass]通过变量选择不同的类型进行加载.
-    chunkFlag:boolean = true;
+    chunkFlag: boolean = true;
 
 
     //初始一个对象,用来给ngfor循环进行遍历
-    people:Array<Object> = [{name:'小明',age:'34',parents:{father:"小明他爸",mother:"小明他妈"}},{name:'小红',age:'12',parents:{father:"小红他爸",mother:"小红他妈"}}]
+    people: Array<Object> = [{name: '小明', age: '34', parents: {father: "小明他爸", mother: "小明他妈"}}, {
+        name: '小红',
+        age: '12',
+        parents: {father: "小红他爸", mother: "小红他妈"}
+    }]
 
     ngOnInit(): void {
 
-        // this.enterBtn.click=()=>alert("点击btn")
+    }
+
+    private btoAstr: string;
+
+    BtoA(value) {
+        this.btoAstr = value;
     }
 }
