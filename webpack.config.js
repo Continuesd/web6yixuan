@@ -6,6 +6,7 @@ module.exports = {
     entry: './client/main.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/assets/',
         filename: '[name].bundle.js'
     },
     module: {
@@ -15,7 +16,7 @@ module.exports = {
                 use: [{
                     loader: 'url-loader', query: {
                         limit: 10000,
-                        name: 'img/[name].[ext]'
+                       name: 'img/[name].[ext]'
                     }
                 }],
             },
