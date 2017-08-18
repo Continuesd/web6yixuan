@@ -6,5 +6,70 @@
 </head>
 <body>
 <h1>我是A页面</h1>
+<hr>
+
+<h2>{{showStr}}</h2>
+<hr>
+
+
+<input type="text" [(ngModel)]="showEnterStr">
+<h3>{{showEnterStr}}</h3>
+<hr>
+
+
+<button (click)="confirm()">确定</button>
+<hr>
+
+
+<div [ngClass]="{'chunk_yellow':chunkFlag,'chunk_red':!chunkFlag}"></div>
+<hr>
+
+
+<!--演示路由跳转的各项功能  routerLinkActive 触发路由后给予的class样式.-->
+<a href="b">点击我跳转到B页面</a><br>
+<a routerLink="b" routerLinkActive="active">点击我将b页面渲染到a中的指定位置</a>
+<!-- 路由内容显示标签 -->
+<router-outlet></router-outlet>
+<hr>
+
+<h1 #h1>我是原始数据</h1>
+<h2>我是复制数据...{{h1.innerText}}</h2>
+<hr>
+
+
+<h1>隐藏对象</h1>
+<h2 [hidden]=true>我被隐藏了.</h2>
+<h1>我是不会被加载的对象</h1>
+<h2 *ngIf="false">我这个对象不会被加载,当为true的时候才会被渲染出来.</h2>
+<hr>
+
+<h1>设置一个style属性,通过boolean进行筛选</h1>
+<div style=" height: 50px;width:50px;" [style.background-color]="true?'red':'yellow'"></div>
+
+<hr>
+<table>
+   <!-- <tr>
+        <td *ngFor="let value of people[0];let key = index">{{key}}</td>
+    </tr>-->
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>父亲</td>
+        <td>母亲</td>
+    </tr>
+    <tr *ngFor="let item of people,let i = index">
+        <td>{{i}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.parents.father}}</td>
+        <td>{{item.parents.mother}}</td>
+    </tr>
+</table>
+<hr>
+
+
+<h1>从A标签,传递数据给B标签</h1>
+
 </body>
 </html>
