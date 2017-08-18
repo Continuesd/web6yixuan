@@ -17,6 +17,7 @@ import {BPage} from "./page/demo/B/b.page";
 import {APage} from "./page/demo/A/a.page";
 import {Error404Page} from "./page/error/404/error_404";
 import {HelloworldPage} from "./page/hello/helloworld.page";
+import {ImgC} from "./components/img-c/img-c";
 
 
 const RoutingModule = RouterModule.forRoot(routerConfig.config);
@@ -25,7 +26,7 @@ const RoutingModule = RouterModule.forRoot(routerConfig.config);
     //模块组件需要其他依赖模块的类
     imports: [BrowserModule, HttpModule, FormsModule,RoutingModule],
     //声明类,pipe也需要声明
-    declarations: [IndexPage,APage,BPage,Error404Page,HelloworldPage],
+    declarations: [IndexPage,APage,BPage,Error404Page,HelloworldPage,ImgC],
     //提供导入的类,并不渲染页面.,{provide: APP_BASE_HREF, useValue : '/' }
     providers: [HttpHelper, HttpUrls],
     //外部可见的内容,相当于java public的作用 可以直接作用在html中如pipe.
