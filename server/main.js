@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 8080));
 //代理服务器进行配置
 
 //调试变量
-var loc = "app_detail";
+var loc = "dist";
 
 var options = {
     target: "http://www.niuwan.net/",
@@ -52,6 +52,6 @@ app.listen(app.get('port'), function () {
 
 });
 
-/*openBrowser.exec("start http://localhost:"+app.get('port'));*/
+openBrowser.exec("start http://localhost:"+app.get('port'));
 
 
