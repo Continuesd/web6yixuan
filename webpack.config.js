@@ -54,13 +54,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './client/index.html'
         }),
-        new webpack.optimize.UglifyJsPlugin({
+     /*   new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 drop_console: true,
                 drop_debugger: true
             }
-        }),
+        }),*/
         new webpack.DefinePlugin({
             app: {
                 environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')

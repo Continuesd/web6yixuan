@@ -11,7 +11,8 @@
     "version": "1.0.0",
     "license": "MIT",
 ```
-cnpm run build
+//安装完环境,直接输入该命令 运行页面.
+cnpm run start
 
 
 ```

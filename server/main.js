@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 8080));
 //代理服务器进行配置
 
 //调试变量
-var loc = "dist";
+var target = "dist";
 
 var options = {
     target: "http://www.niuwan.net/",
@@ -29,9 +29,11 @@ var filter = function (pathname, req) {
 
 const disProxy = proxy(filter,options);
 
-app.use('/', express.static(__dirname + '/../'+loc));
+//后端代理设置
+//app.use(disProxy);
+app.use('/', express.static(__dirname + '/../'+target));
 app.use('/scripts', express.static(__dirname + '/../node_modules'));
-app.use(disProxy);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -42,8 +44,7 @@ app.use(function (req, res, next) {
        next();
     }
     else {
-
-        res.sendFile(path.resolve(__dirname + '/../'+loc+'/index.html'));
+        res.sendFile(path.resolve(__dirname + '/../'+target+'/index.html'));
     }
 });
 
@@ -52,6 +53,6 @@ app.listen(app.get('port'), function () {
 
 });
 
-openBrowser.exec("start http://localhost:"+app.get('port'));
+//openBrowser.exec("start http://localhost:"+app.get('port'));
 
 
