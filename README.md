@@ -11,17 +11,20 @@
     "version": "1.0.0",
     "license": "MIT",
 ```
-//安装完环境,直接输入该命令 运行页面.
-cnpm run start
+//安装完环境,直接输入该命令 运行开发页面.
+cnpm run s
+
+在浏览器中输入localhost:8080浏览页面
 
 
 ```
-    "scripts": {
-      "build": "webpack --progress",
-      "build:prod": "webpack -p --progress",
-      "b": "webpack --config webpack.config.js",
-      "s": "nodemon server/main.js",
-      "start": "concurrently \"webpack --watch --colors\" \"nodemon server/main.js\""
+  "scripts": {
+      /** 开发环境 */
+      "b": "webpack --progress --config webpack/webpack.dev.config.js",
+      "s": "concurrently \"webpack --watch --colors --config webpack/webpack.dev.config.js\" \"nodemon server/server.dev.js\"",
+      /** 生产环境 */
+      "b:prod": "webpack -p --progress --config webpack/webpack.pro.config.js",
+      "s:prod": "concurrently \"webpack --watch --colors --config webpack/webpack.pro.config.js\" \"nodemon server/server.pro.js\""
     },
 ```
     "dependencies": {

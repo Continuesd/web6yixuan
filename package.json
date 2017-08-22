@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "b": "webpack --progress --config webpack/webpack.dev.config.js",
-    "b:prod": "webpack -p --progress --config webpack/webpack.pro.config.js",
     "s": "concurrently \"webpack --watch --colors --config webpack/webpack.dev.config.js\" \"nodemon server/server.dev.js\"",
+    "b:prod": "webpack -p --progress --config webpack/webpack.pro.config.js",
     "s:prod": "concurrently \"webpack --watch --colors --config webpack/webpack.pro.config.js\" \"nodemon server/server.pro.js\""
   },
   "dependencies": {
