@@ -5,7 +5,8 @@
 # IntelliJ project files
 .idea
 *.iml
-/dist
+/dist_dev
+/dist_pro
 out
 gen### Node template
 # Logs

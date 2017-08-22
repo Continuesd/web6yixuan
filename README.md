@@ -49,24 +49,25 @@ cnpm run start
       "zone.js": "^0.8.16"
     },
     "devDependencies": {
-      "autoprefixer": "^7.1.2",
-      "concurrently": "^2.2.0",
-      "css-loader": "^0.28.4",
-      "cssnano": "^3.10.0",
-      "file-loader": "^0.9.0",
-      "glob": "^7.1.2",
-      "html-webpack-plugin": "^2.22.0",
-      "nodemon": "^1.10.2",
-      "postcss-cssnext": "^3.0.2",
-      "postcss-import": "^10.0.0",
-      "postcss-loader": "^2.0.6",
-      "raw-loader": "0.5.1",
-      "style-loader": "^0.18.2",
-      "ts-loader": "^2.3.2",
-      "typescript": "^2.4.2",
-      "url-loader": "^0.5.7",
-      "webpack": "^3.4.1"
+         "autoprefixer": "^7.1.2",
+         "babel-preset-es2015": "^6.24.1",
+         "concurrently": "^2.2.0",
+         "css-loader": "^0.28.4",
+         "cssnano": "^3.10.0",
+         "glob": "^7.1.2",
+         "html-webpack-plugin": "^2.22.0",
+         "html-withimg-loader": "^0.1.16", //html中src图片地址引导插件
+         "nodemon": "^1.10.2",
+         "postcss-cssnext": "^3.0.2",
+         "postcss-import": "^10.0.0",
+         "postcss-loader": "^2.0.6",
+         "raw-loader": "0.5.1",
+         "style-loader": "^0.18.2",
+         "ts-loader": "^2.3.2",
+         "typescript": "^2.4.2",
+         "url-loader": "^0.5.9",
+         "webpack": "^3.4.1",//预处理打包工具
+         "webpack-merge": "^4.1.0" //用来合并webpack config的插件
     }
-
 
 ```

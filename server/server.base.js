@@ -8,30 +8,31 @@ var proxy = require("http-proxy-middleware");//服务器代理中间件
 
 var openBrowser = require('child_process');//调用node平台,用来自动打开浏览器
 var app = express();//获取express对象
+
+
 app.set('port', (process.env.PORT || 8080));
 //代理服务器进行配置
 
-//调试变量
-var target = "dist";
+
 
 var options = {
-    target: "http://www.niuwan.net/",
+    target: "http://www.6yixuan.com/",
     changeOrigin: true,
 }
 
 var filter = function (pathname, req) {
-    if(path.extname(path.resolve(__dirname + pathname))){
+    if (path.extname(path.resolve(__dirname + pathname))) {
         return false;
-    }else{
+    } else {
         return true;
     }
 };
 
-const disProxy = proxy(filter,options);
+const disProxy = proxy(filter, options);
 
 //后端代理设置
-//app.use(disProxy);
-app.use('/', express.static(__dirname + '/../'+target));
+/*app.use(disProxy);*/
+
 app.use('/scripts', express.static(__dirname + '/../node_modules'));
 
 app.use(bodyParser.json());
@@ -39,19 +40,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(morgan('dev'));
 
-app.use(function (req, res, next) {
-    if (path.extname(req.path).length > 0) {
-       next();
-    }
-    else {
-        res.sendFile(path.resolve(__dirname + '/../'+target+'/index.html'));
-    }
-});
-
 
 app.listen(app.get('port'), function () {
 
 });
+
+module.exports = {
+    app:app,
+    express:express
+
+}
 
 //openBrowser.exec("start http://localhost:"+app.get('port'));
 

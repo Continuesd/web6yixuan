@@ -1,4 +1,5 @@
 .imgcss{
-
-    background: url("../../img/01.gif");
+    width: 100px;
+    height: 100px;
+    background:#00FF00  url("../../img/01.gif") no-repeat;
 }

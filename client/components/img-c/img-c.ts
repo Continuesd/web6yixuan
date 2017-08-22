@@ -5,11 +5,11 @@
  */
 
 import {OnInit, Component} from "@angular/core";
-
+/*import img from '../../img/01.gif'*/
 @Component({
-    selector:"img-c",
-    template:require("./img.html"),
-    styles:[require("./img.css")]
+    selector: "img-c",
+    template: require("./img.html"),
+    styles: [require("./img.css")]
 })
 
 export class ImgC implements OnInit {

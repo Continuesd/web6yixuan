@@ -3,26 +3,32 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    entry: './client/main.ts',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
-    },
     module: {
         rules: [
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 use: [{
                     loader: 'url-loader', query: {
-                        limit: 10000,
-                       name: 'img/[name].[ext]'
+                        limit: 8192,
+                        name: 'img/[name].[ext]'
                     }
                 }],
             },
-
+            {
+                test: /\.(eot|woff|woff2|ttf|svg)((\?|\#)[\?\#\w\d_-]+)?$/,
+                use: [{
+                    loader: 'url-loader', query: {
+                        limit: 100,
+                        name: 'fonts/[name].[ext]'
+                    }
+                }],
+            },
             {test: /\.ts$/, use: ['ts-loader'], exclude: /node_modules/},
-            {test: /\.html$/, use: ['raw-loader']},
-            /*  {test: /\.css$/, use: ['raw-loader']},*/
+
+            {
+                test: /\.html$/,
+                loader: 'html-withimg-loader'
+            },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -49,18 +55,11 @@ module.exports = {
         mainFields:
             ["loader", "main"]
     },
-
     plugins: [
         new HtmlWebpackPlugin({
             template: './client/index.html'
         }),
-     /*   new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: true,
-                drop_debugger: true
-            }
-        }),*/
+
         new webpack.DefinePlugin({
             app: {
                 environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
