@@ -57,6 +57,7 @@ cnpm run s
          "concurrently": "^2.2.0",
          "css-loader": "^0.28.4",
          "cssnano": "^3.10.0",
+         "file-loader": "^0.11.2",
          "glob": "^7.1.2",
          "html-webpack-plugin": "^2.22.0",
          "html-withimg-loader": "^0.1.16", //html中src图片地址引导插件
