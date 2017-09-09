@@ -5,14 +5,16 @@ var  Config = {
             //生成环境
             NODE_ENV: "production"
         },
-        webpackTarget:"dist_pro"
+        webpackTarget:"dist_pro",
+        serverTarget:"dist_pro"
     },
     dev:{
         env: {
             //开发环境
             NODE_ENV: "development"
         },
-        webpackTarget:"dist_dev"
+        webpackTarget:"dev_pro",
+        serverTarget:"paper-datatable-api-master"
     }
 };
 

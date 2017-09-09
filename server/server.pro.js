@@ -4,7 +4,7 @@ var express = serverBase.express;
 var path = require("path");//node路径类
 var Config = require("../config.js");
 //调试变量
-var target = Config.pro.webpackTarget;
+var target = Config.pro.serverTarget;
 app.use('/', express.static(__dirname + '/../' + target));
 app.use(function (req, res, next) {
     if (path.extname(req.path).length > 0) {
