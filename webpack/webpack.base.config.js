@@ -14,6 +14,8 @@ module.exports = {
                     }
                 }],
             },
+
+
             {
                 test: /\.(eot|woff|woff2|ttf|svg)((\?|\#)[\?\#\w\d_-]+)?$/,
                 use: [{
@@ -24,7 +26,10 @@ module.exports = {
                 }],
             },
             {test: /\.ts$/, use: ['ts-loader'], exclude: /node_modules/},
-
+            {
+                test: /\.js$/, exclude: /node_modules/,
+                loader: 'ng-annotate!babel'
+            },
             {
                 test: /\.html$/,
                 loader: 'html-withimg-loader'
